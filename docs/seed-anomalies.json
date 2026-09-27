@@ -1,0 +1,33 @@
+{
+  "generated_from": "seed/generate_synthetic_billing.py",
+  "note": "SYNTHETIC ground truth for the injected anomalies below. These are the only days scripts/test.sh expects the live detector to flag as anomalies (Expected). Whatever the detector actually flags on a live run is recorded separately as Captured in docs/test-results.md \u2014 the two are never merged into one number.",
+  "history_start": "2026-06-30",
+  "history_end": "2026-09-27",
+  "row_count": 720,
+  "injected_anomalies": [
+    {
+      "usage_date": "2026-08-19",
+      "service_description": "Kubernetes Engine",
+      "sku_description": "Autopilot vCPU",
+      "k8s_namespace": "checkout",
+      "multiplier": 9.0,
+      "story": "runaway retry loop in a checkout batch job spiked GKE vCPU cost in the checkout namespace for one day"
+    },
+    {
+      "usage_date": "2026-09-03",
+      "service_description": "BigQuery",
+      "sku_description": "Analysis",
+      "k8s_namespace": null,
+      "multiplier": 12.0,
+      "story": "an unscheduled one-off backfill query scanned far more data than a normal day's analysis queries"
+    },
+    {
+      "usage_date": "2026-09-20",
+      "service_description": "Kubernetes Engine",
+      "sku_description": "Autopilot Memory",
+      "k8s_namespace": "checkout",
+      "multiplier": 6.0,
+      "story": "a memory leak in a checkout service drove up GKE memory-request cost in the checkout namespace"
+    }
+  ]
+}

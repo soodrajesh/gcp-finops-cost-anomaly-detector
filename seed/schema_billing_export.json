@@ -1,0 +1,11 @@
+[
+  {"name": "usage_date", "type": "DATE", "mode": "REQUIRED", "description": "Day of usage (billing export uses usage_start_time; collapsed to a day here)."},
+  {"name": "project_id", "type": "STRING", "mode": "REQUIRED"},
+  {"name": "service_description", "type": "STRING", "mode": "REQUIRED", "description": "e.g. 'Compute Engine', 'Kubernetes Engine', 'Cloud Storage'."},
+  {"name": "sku_description", "type": "STRING", "mode": "REQUIRED"},
+  {"name": "location", "type": "STRING", "mode": "NULLABLE"},
+  {"name": "k8s_namespace", "type": "STRING", "mode": "NULLABLE", "description": "GKE cost-allocation label (meta.k8s-namespace) when the SKU is GKE compute; null otherwise."},
+  {"name": "cost", "type": "FLOAT64", "mode": "REQUIRED"},
+  {"name": "currency", "type": "STRING", "mode": "REQUIRED"},
+  {"name": "is_synthetic", "type": "BOOL", "mode": "REQUIRED", "description": "Always true in this table. See docs/adr/0002 — this is seed data, never real billing data."}
+]
