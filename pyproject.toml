@@ -1,2 +1,4 @@
 
+
+[tool.ruff]
 extend-exclude = ["docs/diagrams"]  # generator scripts for the architecture SVGs, not product code
